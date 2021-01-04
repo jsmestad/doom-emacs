@@ -36,6 +36,8 @@
     (sp-local-pair "do " " end" :unless '(sp-in-comment-p sp-in-string-p))
     (sp-local-pair "fn " " end" :unless '(sp-in-comment-p sp-in-string-p)))
 
+  (set-formatter! 'htmlbeautifier "htmlbeautifier " :modes '((web-mode (equal "elixir" web-mode-engine))))
+
   (when (featurep! +lsp)
     (add-hook 'elixir-mode-local-vars-hook #'lsp!))
 
